@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { moveDown, moveLeft, moveRight, rotate } from '../../actions'
 import './Controls.css'
 
