@@ -7,6 +7,7 @@ import './NextBlock.css'
 // Draws the preview box showing the next block to drop
 export default function NextBlock(props) {
   const nextShape = useSelector((state) => state.game.nextShape)
+  // const box = Array(4).fill(Array(4).fill(0))
   const box = shapes[nextShape][0]
 
   // Map the block to the grid
@@ -17,6 +18,7 @@ export default function NextBlock(props) {
     })
   return (
     <div className="next-block">
+
       {grid}
     </div>
   )
