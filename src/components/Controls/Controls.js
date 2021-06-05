@@ -4,39 +4,29 @@ import './Controls.css'
 
 export default function Control() {
   const dispatch = useDispatch()
-  const isRunning = useSelector(state => state.isRunning)
-  const gameOver = useSelector(state => state.gameOver)
+  const isRunning = useSelector(state => state.game.isRunning)
+  const gameOver = useSelector(state => state.game.gameOver)
 
+  const disabled = (!isRunning || gameOver)
   return (
     <div className="controls">
       <button
-        disabled={!isRunning || gameOver}
+        disabled={disabled}
         className="control-button"
-        onClick={ (e) => {
-          if (!isRunning || gameOver) { return }
-          dispatch(moveLeft())
-        }}>Left</button>
+        onClick={ () => disabled ? null : dispatch(moveLeft()) }>Left</button>
       <button
-        disabled={!isRunning || gameOver}
+        disabled={disabled}
         className="control-button"
-        onClick={(e) => {
-          if (!isRunning || gameOver) { return }
-          dispatch(moveRight())
-        }}>Right</button>
+        onClick={ () => disabled ? null : dispatch(moveRight()) }>Right</button>
       <button
-        disabled={!isRunning || gameOver}
+        disabled={disabled}
         className="control-button"
-        onClick={(e) => {
-          if (!isRunning || gameOver) { return }
-          dispatch(rotate())
-        }}>Rotate</button>
+        onClick={ () => disabled ? null : dispatch(rotate()) }>Rotate</button>
       <button
-        disabled={!isRunning || gameOver}
+        disabled={disabled}
         className="control-button"
-        onClick={(e) => {
-          if (!isRunning || gameOver) { return }
-          dispatch(moveDown())
-        }}>Down</button>
+        onClick={ () => disabled ? null : dispatch(moveDown())
+        }>Down</button>
     </div>
   )
 }
