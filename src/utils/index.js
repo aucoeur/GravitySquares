@@ -1,5 +1,5 @@
 
-import { shapes, nextRotation, canMoveTo } from './shapes'
+import { shapes, addBlockToGrid, nextRotation, canMoveTo } from './shapes'
 
 export const random = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
@@ -14,24 +14,16 @@ export const gridDefault = () => {
   const rows = 18
   const cols = 10
 
-  return Array(rows).fill(Array(cols).fill(0))
-}
+  const array = []
 
-// Adds current shape to grid
-export const addBlockToGrid = (shape, grid, x, y, rotation) => {
-    // Get the block array
-    const block = shapes[shape][rotation];
-    // Copy the grid
-    const newGrid = [...grid];
-    // Map the Block onto the grid
-    for (let row = 0; row < block.length; row++) {
-        for (let col = 0; col < block[row].length; col++) {
-            if (block[row][col]) {
-                newGrid[row + y][col + x] = shape;
-            }
-        }
+  for (let row = 0; row < rows; row++) {
+    array.push([])
+    for (let col = 0; col < cols; col++) {
+      array[row].push(0)
     }
-    return newGrid;
+  }
+
+  return array
 }
 
 // Checks for completed rows and scores points
@@ -80,6 +72,7 @@ export const defaultState = () => {
 
 export {
   shapes,
+  addBlockToGrid,
   canMoveTo,
   nextRotation,
 }

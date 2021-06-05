@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux'
 import { moveDown, moveLeft, moveRight, rotate } from '../../actions'
 import './Controls.css'
 
-export default function Control(props) {
+export default function Control() {
   const dispatch = useDispatch()
   // const isRunning = useSelector(state => state.isRunning)
 
