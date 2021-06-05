@@ -31,6 +31,9 @@
   --border-width: 3px;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 .App {
   text-align: center;
