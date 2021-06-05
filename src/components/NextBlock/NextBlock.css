@@ -1,0 +1,7 @@
+/* Next Block */
+.next-block {
+  display: grid;
+  grid-template-columns: repeat(4, var(--tile-size));
+  grid-gap: 0;
+  align-self: flex-start;
+}
