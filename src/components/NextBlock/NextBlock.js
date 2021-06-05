@@ -13,7 +13,7 @@ export default function NextBlock(props) {
   // Map the block to the grid
   const grid = box.map((rows, row) => {
     return rows.map((square, col) => {
-      return <GridSquare key={`${row}${col}`} color={square} />
+      return <GridSquare key={`${row}${col}`} color={square === 0 ? 0 : nextShape} />
       })
     })
   return (
