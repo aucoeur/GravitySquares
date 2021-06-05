@@ -1,5 +1,5 @@
 :root {
-  --bg-color: rgba(150, 150, 150, 1);
+  --bg-color: rgb(40, 44, 52);
 
   /* Border Colors are all transparent colors. These will tint or shade the background color of the square. */
   --border-left-color: rgba(255, 255, 255, 0.20);
@@ -33,6 +33,7 @@
 
 * {
   box-sizing: border-box;
+  background-color:var(--bg-color);
 }
 
 .App {
@@ -56,12 +57,12 @@
                        ". b .";
 
   text-align: center;
+  background-color:var(--bg-color);
 }
 
 .App-header {
   grid-area: h;
 
-  background-color: #282c34;
   min-height: 10vh;
   display: flex;
   flex-direction: column;

@@ -5,8 +5,14 @@
   transform: translate(-50%, -50%);
   width: calc(var(--tile-size) * 10);
   height: calc(var(--tile-size) * 10);
-  background-color: rgba(255, 255, 255, 0.5);
-  text-align: center;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgb(255, 255, 255);
+  font-size: 4em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .message-popup.hidden {

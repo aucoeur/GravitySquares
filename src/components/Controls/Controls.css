@@ -8,11 +8,15 @@
   --size: calc(var(--tile-size) * 2.5);
   width: var(--size);
   height: var(--size);
+  font-size: .8em;
   text-align: center;
   display: block;
-  border-width: 3px;
+  margin: 1px;
+  border-width: 2px;
+  /* border-radius: 15%; */
   border-top-color: var(--button-color-t);
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
   border-bottom-color: var(--button-color-b);
+  background-color:var(--color-0);
 }
