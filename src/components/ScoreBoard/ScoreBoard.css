@@ -1,4 +1,9 @@
 /* Score Board */
+.score-board {
+  grid-area: r;
+
+}
+
 .score-board-button {
   display: block;
   padding: 1em;

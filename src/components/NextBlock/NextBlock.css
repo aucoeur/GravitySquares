@@ -1,5 +1,7 @@
 /* Next Block */
 .next-block {
+  grid-area: l;
+
   display: grid;
   grid-template-columns: repeat(4, var(--tile-size));
   grid-gap: 0;
