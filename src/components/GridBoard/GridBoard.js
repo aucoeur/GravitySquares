@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { shapes } from '../../utils/shapes'
+import { shapes } from '../../utils'
 import GridSquare from '../GridSquare/GridSquare'
 
 import './GridBoard.css'

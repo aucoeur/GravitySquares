@@ -9,25 +9,13 @@ export default function Control(props) {
   return (
     <div className="controls">
       <button className="control-button" onClick={
-        //  isRunning ?
-         dispatch(moveLeft())
-          // : null
-        }>Left</button>
+        (e) => { dispatch(moveLeft()) }}>Left</button>
       <button className="control-button" onClick={
-        //  isRunning ?
-         dispatch(moveRight())
-          // : null
-        }>Right</button>
+        (e) => { dispatch(moveRight()) }}>Right</button>
       <button className="control-button" onClick={
-          // isRunning ?
-          dispatch(rotate())
-          //  : null
-        }>Rotate</button>
+        (e) => { dispatch(rotate()) }}>Rotate</button>
       <button className="control-button" onClick={
-        //  isRunning ?
-         dispatch(moveDown())
-        //  : null
-        }>Down</button>
+        (e) => {dispatch(moveDown()) }}>Down</button>
     </div>
   )
 }

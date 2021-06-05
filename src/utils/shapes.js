@@ -1,5 +1,5 @@
 // Define block shapes and their rotations as arrays.
- const shapes = [
+export const shapes = [
   // none
   [[[0,0,0,0],
     [0,0,0,0],
@@ -107,7 +107,7 @@
     [0,1,1,0],
     [0,0,0,0],
     [0,0,0,0]]]
-]
+  ]
 
 
 export const nextRotation = (shape, rotation) => {
@@ -144,10 +144,4 @@ export const canMoveTo = (shape, grid, x, y, rotation) => {
         }
     }
     return true
-}
-
-export default {
-  shapes,
-  canMoveTo,
-  nextRotation,
 }
