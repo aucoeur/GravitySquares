@@ -19,17 +19,20 @@ const gameReducer = (state = defaultState(), action) => {
       }
 
       return state
+
     case MOVE_RIGHT:
       if (canMoveTo(shape, grid, x + 1, y, rotation)) {
         return { ...state, x: x + 1 }
       }
       return state
+
     case MOVE_LEFT:
       // subtract 1 from the x and check if this new position is possible by calling `canMoveTo()
       if (canMoveTo(shape, grid, x - 1, y, rotation)) {
         return { ...state, x: x - 1 }
       }
       return state
+
     case MOVE_DOWN:
       // Get the next potential Y position
       const maybeY = y + 1
@@ -59,12 +62,6 @@ const gameReducer = (state = defaultState(), action) => {
       newState.score = score
       newState.isRunning = isRunning
 
-      // if (!canMoveTo(nextShape, newGrid, 0, 4, 0)) {
-      //   // Game Over
-      //   console.log("Game Should be over...")
-      //   newState.shape = 0
-      //   return { ...state, gameOver: true }
-      // }
       // Update the score based on if rows were completed or not
       newState.score = score + checkRows(newGrid)
 
