@@ -8,7 +8,7 @@
   --size: calc(var(--tile-size) * 2.5);
   width: var(--size);
   height: var(--size);
-  font-size: .8em;
+  font-size: .7em;
   text-align: center;
   display: block;
   margin: 1px;
