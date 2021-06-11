@@ -1,19 +1,20 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { moveDown, moveLeft, moveRight, rotate, pause, resume, restart } from '../../actions'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faCaretSquareDown,
-  faCaretSquareUp,
-  faCaretSquareLeft,
-  faCaretSquareRight,
-  // faArrowAltCircleUp,
-  // faArrowAltCircleDown,
-  // faArrowAltCircleLeft,
-  // faArrowAltCircleRight,
-  // faRedoAlt
-  } from '@fortawesome/free-solid-svg-icons'
+  useEffect
+} from 'react'
+import {
+  useDispatch,
+  useSelector
+} from 'react-redux'
+import {
+  moveDown,
+  moveLeft,
+  moveRight,
+  rotate,
+  pause,
+  resume,
+  restart
+} from '../../actions'
+
 import './Controls.css'
 
 export default function Control() {
@@ -23,63 +24,67 @@ export default function Control() {
 
   const disabled = (!isRunning || gameOver)
 
-   useEffect(() => {
-    document.addEventListener('keydown', (e) => {
-      console.log(e)
-      switch(e.key) {
+  useEffect(() => {
+
+    function handleKeyPress(e) {
+      switch (e.key) {
         case "ArrowLeft": // LEFT
-          dispatch(moveLeft())
+          if (isRunning) { dispatch(moveLeft()) }
           break
-        case " ": // (SPACEBAR) ROTATE/UP
-          dispatch(rotate())
+        case "ArrowUp": // (SPACEBAR) ROTATE/UP
+          if (isRunning) { dispatch(rotate()) }
           break
         case "ArrowRight": // RIGHT
-          dispatch(moveRight())
+          if (isRunning) { dispatch(moveRight()) }
           break
         case "ArrowDown": // DOWN
-          dispatch(moveDown())
+          if (isRunning) { dispatch(moveDown()) }
           break
         case "p": // PAUSE
-          if(!gameOver) {
+          if (!gameOver) {
             isRunning ? dispatch(pause()) : dispatch(resume())
           }
           break
         case "n": // 'N'ew Game / RESTART
-          if(gameOver) {
+          if (gameOver) {
             dispatch(restart())
           }
           break
         default:
-          //
+          return
+        }
       }
-    })
+
+      document.addEventListener('keydown', handleKeyPress)
+
+      // cleaning up our side effects to prevent multiple eventlisteners to be registered every render
+      return () => document.removeEventListener('keydown', handleKeyPress)
   })
 
-  return (
-    <div className="controls">
-      <button
-        disabled={disabled}
-        className="control-button"
-        onClick={ () => disabled ? null : dispatch(moveLeft()) }>
-          <FontAwesomeIcon icon={faCaretSquareLeft}/>
-        </button>
-      <button
-        disabled={disabled}
-        className="control-button"
-        onClick={ () => disabled ? null : dispatch(moveRight()) }>
-          <FontAwesomeIcon icon={faCaretSquareRight}/>
-        </button>
-      <button
-        disabled={disabled}
-        className="control-button"
-        onClick={ () => disabled ? null : dispatch(rotate()) }>
-          <FontAwesomeIcon icon={faCaretSquareUp}/>
-        </button>
-      <button
-        disabled={disabled}
-        className="control-button"
-        onClick={ () => disabled ? null : dispatch(moveDown())
-        }><FontAwesomeIcon icon={faCaretSquareDown}/></button>
-    </div>
-  )
-}
+
+  return ( <div className = "controls">
+    <button
+      disabled= {disabled}
+      className="control-button"
+      onClick = {() => disabled ? null : dispatch(moveLeft()) }>◀︎
+    </button>
+    <button
+      disabled={disabled}
+      className="control-button"
+      onClick = {() => disabled ? null : dispatch(moveRight())}>▶︎
+    </button>
+    <button
+      disabled = {disabled}
+      className = "control-button"
+      onClick = {() => disabled ? null : dispatch(rotate())
+    }>▲
+    </button>
+    <button
+      disabled = {disabled}
+      className = "control-button"
+      onClick = {
+        () => disabled ? null : dispatch(moveDown())
+      }>▼
+    </button>
+  </div>
+)}

@@ -20,6 +20,7 @@ export default function GridBoard() {
   const block = shapes[shape][rotation]
   const blockColor = shape
 
+
   const update = (time) => {
     requestRef.current = requestAnimationFrame(update)
     if (!isRunning) {

@@ -10,7 +10,7 @@ export default function Game() {
   return(
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Tetris Redux</h1>
+        <h1 className="App-title">GravitySquares Redux</h1>
       </header>
       <GridBoard />
       <NextBlock />

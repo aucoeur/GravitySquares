@@ -3,8 +3,6 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './reducers'
 
-// import Landing from './components/Landing/Landing'
-// import Game from './components/Game/Game'
 import GridBoard from './components/GridBoard/GridBoard'
 import NextBlock from './components/NextBlock/NextBlock'
 import ScoreBoard from './components/ScoreBoard/ScoreBoard'
@@ -13,42 +11,18 @@ import MessagePopUp from './components/MessagePopUp/MessagePopUp'
 
 import './App.css';
 
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import {
-//   faCaretSquareDown,
-//   faCaretSquareUp,
-//   faCaretSquareLeft,
-//   faCaretSquareRight,
-//   faArrowAltCircleUp,
-//   faArrowAltCircleDown,
-//   faArrowAltCircleLeft,
-//   faArrowAltCircleRight,
-//   faRedoAlt
-//   } from '@fortawesome/free-solid-svg-icons'
-
-
-// library.add(
-//   faCaretSquareDown,
-//   faCaretSquareUp,
-//   faCaretSquareLeft,
-//   faCaretSquareRight,
-//   faArrowAltCircleUp,
-//   faArrowAltCircleDown,
-//   faArrowAltCircleLeft,
-//   faArrowAltCircleRight,
-//   faRedoAlt)
-
-const store = createStore(reducers)
+const store = createStore(reducers,
+  typeof window !== 'undefined' &&
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 function App() {
-  // const newInstance = useSelector(state => state.game.isNew)
+  // console.log(`hi`)
   return (
     <Provider store={store}>
-      {/* { newInstance ? <Landing /> : <Game /> */}
-      {/* <Game /> */}
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Tetris Redux</h1>
+          <h1 className="App-title">GravitySquares</h1>
         </header>
         <GridBoard />
         <NextBlock />

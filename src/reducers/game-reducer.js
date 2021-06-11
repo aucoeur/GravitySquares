@@ -51,7 +51,10 @@ const gameReducer = (state = defaultState(), action) => {
         const newState = { ...state };
         newState.shape = 0;
         newState.grid = newGrid;
-        return { ...state, gameOver: true };
+        return {
+          ...state,
+          isRunning: false,
+          gameOver: true };
       }
 
       // reset some things to start a new shape/block
@@ -74,7 +77,10 @@ const gameReducer = (state = defaultState(), action) => {
     case RESTART:
       return defaultState()
     case GAME_OVER:
-      return state
+      return {
+        ...state,
+        isRunning: false,
+        gameOver: true }
     default:
       return state
   }

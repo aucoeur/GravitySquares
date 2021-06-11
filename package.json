@@ -1,34 +1,35 @@
 {
-  "name": "tetris",
-  "description": "boop doop",
-  "version": "0.1.0",
+  "name": "gravity-squares",
+  "description": "it's off-brand tetris",
+  "version": "0.2.0",
   "private": true,
   "author": {
     "name": "Aucoeur Ngo",
     "email": "aucoeurngo@gmail.com",
     "url": "https://aucoeur.dev"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aucoeur/GravitySquares.git"
+  },
   "build": {
-    "appId": "dev.aucoeur.tetris",
-    "productName": "Tetris",
-    "copyright": "Tetris belongs to Nintendo not me rip",
+    "appId": "dev.aucoeur.gravitySquares",
+    "productName": "Gravity Squares",
+    "copyright": "Aucoeur Ngo",
     "mac": {
-      "category": "public.app-category.utilities"
+      "category": "public.app-category.games"
     },
     "files": [
       "build/**/*",
       "node_modules/**/*"
     ],
     "directories": {
-      "buildResources": "public"
+      "buildResources": "build"
     }
   },
   "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
     "electron-is-dev": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -37,13 +38,14 @@
     "redux": "^4.1.0",
     "web-vitals": "^1.0.1"
   },
-   "devDependencies": {
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "concurrently": "^6.2.0",
     "electron": "^13.1.1",
     "electron-builder": "^22.10.5",
+    "electron-devtools-installer": "git+https://github.com/MarshallOfSound/electron-devtools-installer.git",
     "typescript": "^4.3.2",
     "wait-on": "^5.3.0"
   },
@@ -53,7 +55,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently -k \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-
+    "electron": "electron .",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder --dir",
     "dist": "electron-builder -mwl"

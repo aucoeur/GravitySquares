@@ -8,7 +8,7 @@ export default function Landing() {
 
   return (
     <>
-    <h1>Tetris</h1>
+    <h1>GravitySquares</h1>
 
     <button onClick={() => {dispatch(newGame())}}>New Game</button>
     </>
