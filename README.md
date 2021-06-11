@@ -15,13 +15,20 @@ Part 2: [Desktop Apps with Electron](https://github.com/Make-School-Courses/FEW-
 **Part 2**
 - [x] Build a desktop application with HTML/CSS/JS
 - [x] Create an Electron project with React
+- [x] Bundle for dist
 
 ## Todo
-- [ ] Hard Drop
-- [ ] Add Start Screen
-- [ ] Add labels/key for controls
+- [x] Reorganize utils
 - [ ] More better styling
-- [ ] Reorganize utils
+  - [ ] Add labels/key for controls
+  - [ ] Add Start Screen
+- [ ] Increment levels
+- [ ] Track lines cleared
+- [ ] Customize Settings
+  - [ ] Hard/Fast Drop
+  - [ ] Final Block Placement Preview/Outline
+  - [ ] Zen Mode, speed stays the same
+  - [ ] Increase speed by level
 
 ## Notes
 - `REDUX_DEVTOOLS` might show 'no store' on reload, toggling devtools window should refresh without needing to quit/re-run
