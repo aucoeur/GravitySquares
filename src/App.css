@@ -62,7 +62,6 @@
 
 .App-header {
   grid-area: h;
-
   min-height: 10vh;
   display: flex;
   flex-direction: column;

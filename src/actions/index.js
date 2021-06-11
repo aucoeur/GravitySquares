@@ -7,6 +7,7 @@ export const ROTATE     = "ROTATE"      // Rotate piece
 export const MOVE_DOWN  = "MOVE_DOWN"   // Move piece down
 export const GAME_OVER  = "GAME_OVER"   // The game is over
 export const RESTART    = "RESTART"     // Restart Game
+export const NEW_GAME = "NEW_GAME"
 
 // Action Creators
 export const pause = () => {
@@ -39,4 +40,8 @@ export const gameOver = () => {
 
 export const restart = () => {
   return { type: RESTART }
+}
+
+export const newGame = () => {
+  return { type: NEW_GAME }
 }

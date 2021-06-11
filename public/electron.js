@@ -1,9 +1,11 @@
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 
-const path = require('path')
-const isDev = require('electron-is-dev')
+const path = require('path');
+// const url = require('url');
+
+const isDev = require('electron-is-dev');
 
 let mainWindow
 
@@ -11,16 +13,19 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 900,
     height: 680,
+    icon: path.join(__dirname + 'public/icons/192x192.png'),
     webPreferences: {
       nodeIntegration: true
     }
   })
-  mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file\\${path.join(__dirname, '../build/index.html')}`)
+
+  mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, 'build/index.html')}`)
+
   if (isDev) {
     // Open the DevTools.
     // BrowserWindow.addDevToolsExtension('<location to your react chrome extension>');
     // Open Chrome web inspector for debug and development
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
   }
   mainWindow.on('closed', () => mainWindow = null)
 }
