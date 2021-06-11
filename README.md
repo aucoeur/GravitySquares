@@ -22,10 +22,12 @@ Part 2: [Desktop Apps with Electron](https://github.com/Make-School-Courses/FEW-
 - [ ] More better styling
   - [ ] Add labels/key for controls
   - [ ] Add Start Screen
+  - [ ] Change Preview Block style
 - [ ] Increment levels
 - [ ] Track lines cleared
 - [ ] Customize Settings
-  - [ ] Hard/Fast Drop
+  - [ ] Hard/Fast Drop 
+  - [ ] Swap with Preview??
   - [ ] Final Block Placement Preview/Outline
   - [ ] Zen Mode, speed stays the same
   - [ ] Increase speed by level

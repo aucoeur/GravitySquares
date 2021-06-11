@@ -17,9 +17,16 @@ export default function NextBlock(props) {
       })
     })
   return (
-    <div className="next-block">
+    <div>
 
-      {grid}
+      <div className="nextHead">
+        <h4>Next Block:</h4>
+      </div>
+
+      <div className="next-block">
+        {grid}
+      </div>
+
     </div>
   )
 }

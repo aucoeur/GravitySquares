@@ -1,9 +1,22 @@
 /* Next Block */
+.nextHead {
+  color: var(--color-0);
+  text-align: left;
+  padding-top: 0;
+}
+
+.nextHead>.h4 {
+  font-size: 1em;
+}
+
 .next-block {
   grid-area: l;
 
   display: grid;
   grid-template-columns: repeat(4, var(--tile-size));
+
   grid-gap: 0;
   align-self: flex-start;
+
+
 }
