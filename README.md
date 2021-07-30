@@ -1,6 +1,11 @@
-# React Redux GravitySquares 
+# GravitySquares 
+off-off-off-brand tetris made with react, redux & electron
 
-This tutorial recreates the classic arcade game Tetris with React, Redux & Electron
+<p style="text-align:center">
+  <img width="450" src="./public/gravitysquares.png">
+</p>
+
+# Resource
 
 Part 1: [React Redux Tetris Tutorial](https://github.com/MakeSchool-Tutorials/web-7-react-redux-tetris-app)    
 Part 2: [Desktop Apps with Electron](https://github.com/Make-School-Courses/FEW-2.4-Native-Development-with-JavaScript/blob/master/Lessons/Lesson-03.md)
